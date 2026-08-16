@@ -15,29 +15,24 @@ def translate_text(text_to_translate, target_language="English"):
     messages=[
         {
             'role':'system',
-            'content':f'translate the following message given by user into {target_language} also show roman english translation'
-        },{
+            'content': f'you are translator for {target_language} language'
+        },
+        {
             'role':'user',
-            'content':text_to_translate
-        }
-    ]
-    )
+            'content':f'{text_to_translate}'
+        }],
+    temperature=.5)
+    
     return response.choices[0].message.content
-    
+
 def main():
-    
-    # loop while rund while text for translation is being passed
+    target = input('what language you want translated to: ')
     while True:
-        text_to_translate = input('enter text to translate: ')
-        if text_to_translate.lower() in ['exit']:
+        user_input = input('enter text to translate: ')
+        if user_input.lower().strip() in ['exit']:
             print('exiting')
             break
-        target_language = input('enter the target language: ')
-        if target_language.lower() in ['exit']:
-            print('exiting')
-            break
-        
-        translation = translate_text(text_to_translate, target_language)
+        translation = translate_text(user_input, target)
         print(translation)
         
 main()
