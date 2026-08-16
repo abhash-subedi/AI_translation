@@ -6,9 +6,9 @@ from groq import Groq
 load_dotenv()
 
 # Initialize Groq client
-client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+client = Groq(api_key=os.getenv('GROQ_API_KEY'))
 
-def translate_text(text_to_translate, target_language="English"):
+def translate_text(text_to_translate, target_language='English'):
     """Sends text to Groq for translation."""
     response = client.chat.completions.create(
     model='llama-3.1-8b-instant',
