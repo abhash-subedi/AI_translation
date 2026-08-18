@@ -27,7 +27,6 @@ def translate_text(text_to_translate, target_language='English'):
         config=types.GenerateContentConfig(
             system_instruction=f'you are translator for {target_language} language',
             temperature=0.5,
-            automatic_function_calling=types.AutomaticFunctionCallingConfig(disable=True)
         ),
     )
     
@@ -46,5 +45,5 @@ if st.button('Translate', type='primary'):
                 st.subheader('Translation result: ')
                 st.success(translation)
             except Exception as e:
-                st.warning(f'failed dur to {e} error')
+                st.warning(f'failed due to {e} error')
                 
