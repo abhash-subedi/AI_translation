@@ -26,7 +26,7 @@ def translate_text(text_to_translate, target_language='English'):
         contents=text_to_translate,
         config=types.GenerateContentConfig(
             system_instruction=f'you are translator for {target_language} language',
-            temperature=0.5,
+            temperature=0.5
         ),
     )
     
