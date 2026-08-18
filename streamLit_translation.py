@@ -20,7 +20,7 @@ if not client:
     st.stop()
 
 def translate_text(text_to_translate, target_language='English'):
-    """Sends text to Groq for translation."""
+    """Sends text to Gemini for translation."""
     response = client.models.generate_content(
         model='gemini-2.5-flash',
         contents=text_to_translate,
