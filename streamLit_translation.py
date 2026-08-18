@@ -2,7 +2,6 @@ import os
 from google import genai
 from google.genai import types
 from dotenv import load_dotenv
-from groq import Groq
 import streamlit as st
 
 # Load environment variables
